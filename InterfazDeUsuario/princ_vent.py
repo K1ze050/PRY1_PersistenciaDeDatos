@@ -2,10 +2,12 @@ import tkinter as tk
 from InterfazDeUsuario.setting_vent import ABRIR_SET
 from LogicaYDatos.config import LEER_CONF
 
-def SIM_OPC():
+def SIM_OPC(): #Esta función sera usada para secciones 
+#que realmente no le daremos un uso más alla del estetico. 
     pass
 
-def ACT_VIS(vent, lbl):
+def ACT_VIS(vent, lbl): #Nos permite la lectura de la configuración
+#del JSON  para que sea visible en la interfaz visual
     conf = LEER_CONF()
     
     fondo = "#2b2b2b" if conf.get("tema") == "oscuro" else "#ffffff"
@@ -18,9 +20,10 @@ def ACT_VIS(vent, lbl):
         font=("Arial", conf.get("tam_fuente"))
     )
 
-def INI_PRINC():
+def INI_PRINC(): 
+#Creación de la interfaz gráfica con tkinter creando las ventanas visuales
     vent = tk.Tk()
-    vent.title("Panel Principal - Gestor de Archivos")
+    vent.title("Comprobador de archivos")
     vent.geometry("600x400")
 
     menu_bar = tk.Menu(vent)
